@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Navbar from './Navbar'
 import Cards from './Cards'
 import Footer from './Footer'
+import Carusel from './Carusel'
 
 
 
@@ -28,7 +29,7 @@ const MainContainer = () => {
             title: "Arra",
             stock: "27 ta",
             narxi: "55.000 som",
-            img: "/src/components/img/arra.jpg",
+            img: "./src/components/img/arra.jpg",
             description: "quriliwda judayam kerak boladgan asboblardan biri bolmiw arra. Zanglamaydigan metalldan yasalgan va juda o'tkir"
         },
         {
@@ -36,7 +37,7 @@ const MainContainer = () => {
             title: "Mix", 
             stock: "1000 ta",
             narxi: "1 kg 10.000 som",
-            img: "/src/components/img/mix.jpg",
+            img: "./src/components/img/mix.jpg",
             description: "vapwem kerak bolgan mix. Mixsiz uylaringizni bitira olmaysiz"
         },
         {
@@ -44,7 +45,7 @@ const MainContainer = () => {
             title: "Bolg'a",
             stock: "109 ta",
             narxi: "40.000 som",
-            img: "/src/components/img/bolga.jpg",
+            img: "./src/components/img/bolga.jpg",
             description: "asosi yogoch va ozi temirdan yasalgan bolga. Busiz umuman iwina bitmaydi."
         },
         {
@@ -52,7 +53,7 @@ const MainContainer = () => {
             title: "Shifer",
             stock: "1003 ta",
             narxi: "560.000",
-            img: "/src/components/img/shifr.jpg",
+            img: "./src/components/img/shifr.jpg",
             description: "Suv otkazmaydigan judayam sifatli shifer. Hali yangi ishlatilmagan. Albasterdan yasalgan"
         },
         {
@@ -60,7 +61,7 @@ const MainContainer = () => {
             title: "Yog'och",
             stock: "2560 ta",
             narxi: "995.000 som",
-            img: "/src/components/img/yog'och.webp",
+            img: "./src/components/img/yog'och.webp",
             description: "Sifatli yo'goch. Rossiyadan yetkizib keltiriladi. 12 oy kafolati bor. Yorilib ketmaydi"
         },
         {
@@ -68,7 +69,7 @@ const MainContainer = () => {
             title: "Shlakablok",
             stock: "698 ta",
             narxi: "787.000 som",
-            img: "/src/components/img/shlakablok.png",
+            img: "./src/components/img/shlakablok.png",
             description: "Toza sementdan yasalgan shlakablok. Quriliwlarda 2 yilgacha kafolat bor. Yetkizib beriw hizmati bor"
         },
         {
@@ -76,7 +77,7 @@ const MainContainer = () => {
             title: "Lampichka",
             stock: "78 ta",
             narxi: "20.000-56.000 som",
-            img: "/src/components/img/lampichka.jpg",
+            img: "./src/components/img/lampichka.jpg",
             description: "Turli xil razmerdagi akfa lampichkalar. 6 oy kafolati bor va yetkazib beriladi."
         },
         {
@@ -84,7 +85,7 @@ const MainContainer = () => {
             title: "Sement",
             stock: "89 ta",
             narxi: "1 kg - 100.000 som",
-            img: "/src/components/img/sement.jpg",
+            img: "./src/components/img/sement.jpg",
             description: "Sifatli tez qotadigan va suvda qotadigan sement. Yekazib berish xizmati bor"
         },
         {
@@ -92,7 +93,7 @@ const MainContainer = () => {
             title: "Armatura",
             stock: "609 ta",
             narxi: "1 metr - 24.000 som",
-            img: "/src/components/img/armatura.webp",
+            img: "./src/components/img/armatura.webp",
             description: "Sifatli 1-sort metall aramtura. 3 oy garantiya bor. Dastavka mavjud."
         },
         {
@@ -100,7 +101,7 @@ const MainContainer = () => {
             title: "Truba",
             stock: "342 ta",
             narxi: "1 metr - 20.000 som",
-            img: "/src/components/img/truba.jpg",
+            img: "./src/components/img/truba.jpg",
             description: "Metall va plastmassadan yasalga profnastil trubalari. Dastavka xizmati bor"
         },
         {
@@ -108,7 +109,7 @@ const MainContainer = () => {
             title: "Paqir",
             stock: "12 ta",
             narxi: "15.000 som",
-            img: "/src/components/img/paqir.jpg",
+            img: "./src/components/img/paqir.jpg",
             description: "Tunka va plastmassa paqirlar. Teshilib qolmaydi kafolat bor."
         },
         {
@@ -116,7 +117,7 @@ const MainContainer = () => {
             title: "Lapatka",
             stock: "99 ta",
             narxi: "49.000 som",
-            img: "/src/components/img/lapatla.jfif",
+            img: "./src/components/img/lapatla.jfif",
             description: "Uchli va sapkavoy lapatka. Tutqichi yogoch ozi temir (sifatli va yemirilmaydi)"
         },
         {
@@ -124,7 +125,7 @@ const MainContainer = () => {
             title: "Ketmon",
             stock: "78 ta",
             narxi: "39.000 som",
-            img: "/src/components/img/ketmon.jpg",
+            img: "./src/components/img/ketmon.jpg",
             description: "Abduhllajonni uchar kettmonidan qolishmadigan ketmon. Judayam sifatli duo qilib ishlatasila."
         },  
         {
@@ -132,7 +133,7 @@ const MainContainer = () => {
             title: "Temir kley",
             stock: "87 ta",
             narxi: "68.000 som",
-            img: "/src/components/img/kley.jpg",
+            img: "./src/components/img/kley.jpg",
             description: "Temirlar uchun kley. Judayam sifatli ko'chib ketmaydi kafolati bor (Titan)."
         },
         {
@@ -140,7 +141,7 @@ const MainContainer = () => {
             title: "Rangli Bo'yoqlars",
             stock: "107 ta",
             narxi: "99.000 som",
-            img: "/src/components/img/kraska.webp",
+            img: "./src/components/img/kraska.webp",
             description: "WS-Plast rangli bo'yoqlari. Hamma ranglisi mavjud va judayam yorqin ranglarda."
         },
         {
@@ -148,7 +149,7 @@ const MainContainer = () => {
             title: "Andava",
             stock: "14 ta",
             narxi: "9.000 som",
-            img: "/src/components/img/andava.jpg",
+            img: "./src/components/img/andava.jpg",
             description: "Otdelka va qum suvoqlarda iwlatiw uchun eng sifatli andava (skidka narxlarda)."
         },
         {
@@ -156,7 +157,7 @@ const MainContainer = () => {
             title: "Ombur",
             stock: "51 ta",
             narxi: "54.000 som",
-            img: "/src/components/img/ombur.png",
+            img: "./src/components/img/ombur.png",
             description: "Metalldan yasalgan ombur, tishi judayam otkir uncha muncha narsaga ishlaydi"
         },
         {
@@ -164,7 +165,7 @@ const MainContainer = () => {
             title: "Tok qaychi",
             stock: "21 ta",
             narxi: "34.000 som",
-            img: "/src/components/img/ombur.jpg",
+            img: "./src/components/img/ombur.jpg",
             description: "Tok va wunga oxwagan narsalarni qirqiw uchun tok qaychi(zanglamas metalldan yasalgan)"
         },
         {
@@ -172,7 +173,7 @@ const MainContainer = () => {
             title: "Eshiklar",
             stock: "95 ta",
             narxi: "499.000 som",
-            img: "/src/components/img/eshik.jpg",
+            img: "./src/components/img/eshik.jpg",
             description: "Turli xil ranglardagi eshiklar. Yogochdan yasalgan shishib ketmaydi (brand: Rasulov Gi)"
         },
         {
@@ -180,7 +181,7 @@ const MainContainer = () => {
             title: "Bolt va Gayka",
             stock: "453 ta",
             narxi: "89.000 som ",
-            img: "/src/components/img/gayka.jpg",
+            img: "./src/components/img/gayka.jpg",
             description: "Mexmash zavodida ishlab chiqarilgan bold va gaykalar (sifatiga kafolat bor)"
         },
         {
@@ -188,7 +189,7 @@ const MainContainer = () => {
             title: "Tesha",
             stock: "53 ta",
             narxi: "59.000 som ",
-            img: "/src/components/img/tesha.jpg",
+            img: "./src/components/img/tesha.jpg",
             description: "Zanglamas po'latdan yasalgan tesha. Sifatiga kafolat va dastavka bor"
         },
         {
@@ -196,7 +197,7 @@ const MainContainer = () => {
             title: "Dazmol",
             stock: "23 ta",
             narxi: "259.000 som ",
-            img: "/src/components/img/dazmol.jpg",
+            img: "./src/components/img/dazmol.jpg",
             description: "Trubalarni birlashtirishda ishlatiladigan dazmol. Qotirilgan trubalar ajrab ketmaydi (poletilin)"
         },
         {
@@ -204,7 +205,7 @@ const MainContainer = () => {
             title: "Shayton",
             stock: "32 ta",
             narxi: "99.000 som ",
-            img: "/src/components/img/shayton.jpg",
+            img: "./src/components/img/shayton.jpg",
             description: "Stabilizator vazifasida iwlatiladigan shayton. Qiyalik va tekkisliklarni o'lchaydi"
         },
         {
@@ -212,7 +213,7 @@ const MainContainer = () => {
             title: "Qurilish ipi",
             stock: "54 ta",
             narxi: "78.000 som ",
-            img: "/src/components/img/ip.jfif",
+            img: "./src/components/img/ip.jfif",
             description: "Kuchli taranglikka ega qurilish ipi. Bog'lab qo'yilsa uzilib ketmaydi "
         },
         {
@@ -220,7 +221,7 @@ const MainContainer = () => {
             title: "G'isht",
             stock: "1458 ta",
             narxi: "67.000 som ",
-            img: "/src/components/img/gisht.jpg",
+            img: "./src/components/img/gisht.jpg",
             description: "Yuqori sifatli pishiq g'ishtlar, uy qurish un eng yaxwi tanlov"
         },
         {
@@ -228,7 +229,7 @@ const MainContainer = () => {
             title: "Faner",
             stock: "564 ta",
             narxi: "130.000 som ",
-            img: "/src/components/img/ponir.jpg",
+            img: "./src/components/img/ponir.jpg",
             description: "Turli xil ranglardagi fanerlar, yuqori sifatli va suv teksa shishib ketishi kam"
         }
 ]
@@ -238,6 +239,10 @@ const MainContainer = () => {
     <>
         {/* navbar qowdm */}
         <Navbar mx={mx}/>
+        {/* carusel qoshdim */}
+        <div className=' mt-10 mb-20 '>
+            <Carusel />
+        </div>
         {/* categoriya bn search qowdm */}
          <div className={`flex justify-between items-center ${mx} mt-10`}>
             <select onChange={(e)=>filterHandler(e.target.value)} className="border bg-transparent  rounded outline-none py-2 px-4 w-full md:w-52  border-black">
