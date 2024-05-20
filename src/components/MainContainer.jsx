@@ -1,15 +1,27 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from './Navbar'
-import mix from './img/mix.jpg'
-import bolga from './img/bolga.jpg'
 import Cards from './Cards'
+import Footer from './Footer'
+
 
 
 
 
 const MainContainer = () => {
     
-
+    const category = [
+        "Barchasi",
+        "qurilish uchun uchun",
+        "ichki dizayn",
+        "tashqi dizayn",
+        "yogoch material",
+        "temir material",
+        "santexnika",
+        "kafolatli",
+        "yetkazib berish bn",
+        "poydevor",
+        "yana nimadir"
+    ]
     const dataBase = [
         {
             id: 0,
@@ -220,48 +232,34 @@ const MainContainer = () => {
             description: "Turli xil ranglardagi fanerlar, yuqori sifatli va suv teksa shishib ketishi kam"
         }
 ]
+    const mx = "lg:mx-16 md:mx-13 sm:mx-8 mx-7  "
     console.log(dataBase);
   return (
     <>
-        <Navbar />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mx-20 mt-10 gap-5">
+        {/* navbar qowdm */}
+        <Navbar mx={mx}/>
+        {/* categoriya bn search qowdm */}
+         <div className={`flex justify-between items-center ${mx} mt-10`}>
+            <select onChange={(e)=>filterHandler(e.target.value)} className="border bg-transparent  rounded outline-none py-2 px-4 w-full md:w-52  border-black">
+                        {category.length ? category.map((item,i) => (
+                            
+                            <option key={i} value={item}>{item}</option>
+                        )): <option>malumot yoq</option>
+                    }
+                </select>
+            <input type="text" className='rounded-lg border border-black px-5 py-2' placeholder='Mahsulot qidiring...'/>
+        </div>
+        {/* dataBase ni map qildim */}
+        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 ${mx} mt-10 gap-5`}>
             {
                 dataBase?.length ? dataBase.map((item, i) => (
                 <Cards i={i} item={item} /> 
                )) : <p>Ma'lumotlar topilamdi...</p>
             }
         </div>
-        
+        <Footer mx={mx} />
     </>
   )
 }
 
 export default MainContainer
-
-
-
-// {
-//     data?.length ?
-//     data.map((item, i) => (
-//        <Cards i={i} ModuleHandler={ModuleHandler} item={item} /> 
-//     )) : <p>Ma'lumotlar topilamdi...</p>
-// }
-
-// {
-//     dataBase?.length ? dataBase.map((item,i) => (
-//         <div key={i}  className='flex border  border-black  flex-col gap-4 transition-all  rounded-md overflow-hidden bg-white '>
-//                             <div className='aspect-[3/2]   w-full overflow-hidden cursor-pointer group'>
-//                                 <img className='w-full h-full object-cover object-top' src={item.img} alt="" />
-//                             </div>
-//                             {console.log(item.img)}
-//                             <div className="flex flex-col flex-1 p-4 gap-2">
-//                                 <h1 className='text-lg font-bold '>{item.title}</h1>
-//                                 <p className='font-semibold text-cyan-500'>Narxi: <span>{item.narxi}</span></p>
-//                                 <p className='font-semibol '><span className="font-semibold">Soni: </span>{item.stock}</p>
-//                                 <p className='text-base text-red-500 dark:text-slate-400'>Ta'rif: <span>{item.description}</span></p>
-//                                 <button className='bg-cyan-500 text-white py-2 px-3 text-center mt-auto rounded detail hover-eff transition-all duration-300'>Details</button>
-//                             </div>
-//                         </div>
-//     )):<p>salomat</p>
-    
-// }
