@@ -1,4 +1,5 @@
 import React from 'react'
+import { SlBasket } from "react-icons/sl";
 
 const Cards = ({item, i}) => {
   console.log(item);
@@ -13,7 +14,10 @@ const Cards = ({item, i}) => {
                                         <p className='font-semibold text-cyan-500'>Narxi: {item.narxi}</p>
                                         <p className='font-semibold '><span className="font-semibold">Soni: </span>{item.stock}</p>
                                         <p className='text-base text-slate-500 dark:text-slate-400'>Ta'rif: {item.description}</p>
-                                        <button className='bg-cyan-500 text-white py-2 px-3 text-center mt-auto rounded detail hover-eff transition-all duration-300'>Details</button>
+                                        <div className="flex flex-1 justify-center gap-5 items-center">
+                                            <button className='bg-green-500 flex items-center justify-center gap-3 text-white py-2 px-28 text-center mt-auto rounded detail hover-eff transition-all duration-300'><span className='text-lg'>Buy</span> <span><SlBasket /></span></button>
+                                            <button className='bg-red-500 tetx-lg text-white py-2.5 px-3 text-center mt-auto rounded detail hover-eff transition-all duration-300'>Batafsil</button>
+                                        </div>
                                     </div>
                                 </div>
     </>
