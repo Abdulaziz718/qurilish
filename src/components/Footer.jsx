@@ -23,8 +23,8 @@ const Footer = ({mx}) => {
                 </ul>
             </div>
             <div className='flex flex-col gap-5'>
-                <h1 className='lg:text-3xl text-2xl font-bold'>Ijtimloiy tarmoqlarimiz</h1>
-                <div className='flex flex-col gap-3  text-3xl'>
+                <h1 className='lg:text-2xl text-lg font-bold'>Ijtimloiy tarmoqlarimiz</h1>
+                <div className='flex flex-col gap-3  text-2xl'>
                     <div className='flex gap-3 items-center'>
                         <FaTelegram />
                         <h1>@Abujon_18</h1>

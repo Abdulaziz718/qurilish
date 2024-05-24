@@ -7,7 +7,7 @@ const Cards = ({item, i}) => {
     <>
          <div key={i}  className='flex border  border-black  flex-col gap-1 transition-all  rounded-md overflow-hidden bg-white '>
                                     <div className='aspect-[3/2]   w-full overflow-hidden cursor-pointer group'>
-                                        <img className='w-full h-full object-cover object-top' src={item.img} alt="" />
+                                        <img className='w-full h-full object-cover object-top hoverr' src={item.img} alt="" />
                                     </div>
                                     <div className="flex flex-col flex-1 p-4 gap-2">
                                         <h1 className='text-lg font-bold  '>{item.title}</h1>

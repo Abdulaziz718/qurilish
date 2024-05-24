@@ -18,3 +18,12 @@ input{
 .radius{
     border-radius: 10px;
 }
+
+.hoverr:hover{
+    transform: scale(1.1);
+}
+
+.hoverr{
+    overflow: hidden;
+    transition: all .3s ease-in-out ;
+}
