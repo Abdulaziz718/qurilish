@@ -2,7 +2,7 @@ import React from 'react'
 import { SlBasket } from "react-icons/sl";
 
 const Cards = ({item, i}) => {
-  console.log(item);
+  
   return (
     <>
          <div key={i}  className='flex border  border-black  flex-col gap-1 transition-all  rounded-md overflow-hidden bg-white '>

@@ -262,7 +262,8 @@ const MainContainer = () => {
     const [dataBase, setDataBase] = useState(dataBaseProducts)
     const [data, setData] = useState()
     const mx = "lg:mx-16 md:mx-13 sm:mx-8 mx-7  "
-    console.log(dataBase);
+    const [isOpen, setIsOpen] = useState(false)
+    
     const filterHandler = async (value) =>{   
         
     }
@@ -273,31 +274,38 @@ const MainContainer = () => {
     }
   return (
     <>
-        {/* navbar qowdm */}
-        <Navbar mx={mx}/>
-        {/* carusel qoshdim */}
-        <div className=' mt-10 mb-20 '>
-            <Carusel />
-        </div>
-       {/* categoriya bn search qowdm */}
-         <div className={`flex justify-between items-center ${mx} mt-10`}>
-            <select onChange={(e)=>filterHandler(e.target.value)} className="border bg-transparent  rounded outline-none py-2 px-4 w-full md:w-52  border-black">
-                        {category.length ? category.map((item,i) => (
-                            <option onChange={(e)=>filterHandler(e.target.value)} key={i} value={item}>{item}</option>
+       <div>
+            <div>
+                 {/* navbar qowdm */}
+                <Navbar setIsOpen={setIsOpen} mx={mx}/>
+                {/* carusel qoshdim */}
+                {/* <div className=' mt-10 mb-20 '>
+                 {/* <Carusel /> */}
+                 {/* </div>  */}
+            {/* categoriya bn search qowdm */}
+            <div className={`flex justify-between items-center ${mx} mt-10`}>
+                <select onChange={(e)=>filterHandler(e.target.value)} className="border bg-transparent  rounded outline-none py-2 px-4 w-full md:w-52  border-black">
+                    {category.length ? category.map((item,i) => (
+                        <option onChange={(e)=>filterHandler(e.target.value)} key={i} value={item}>{item}</option>
                         )): <option>malumot yoq</option>
                     }
                 </select>
-            <input type="text" onChange={(e) => searchHandkler(e.target.value)} className='rounded-lg border border-black px-5 py-2' placeholder='Mahsulot qidiring...'/>
-        </div>
-        {/* dataBase ni map qildim */}
-        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 ${mx} mt-10 gap-5`}>
+                <input type="text" onChange={(e) => searchHandkler(e.target.value)} className='rounded-lg border border-black px-5 py-2' placeholder='Mahsulot qidiring...'/>
+            </div>
+            {/* dataBase ni map qildim */}
+            <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 ${mx} mt-10 gap-5`}>
             {
                 dataBase?.length ? dataBase.map((item, i) => (
                 <Cards i={i} item={item} /> 
                )) : <p>Ma'lumotlar topilamdi...</p>
             }
-        </div>
-        <Footer mx={mx} />
+            </div>
+            <Footer mx={mx} />
+            </div>
+            <div className={`${isOpen ? "w-[500px]" : "w-0"} fixed transition-all duration-500 top-0 right-0 shadow-md h-screen bg-slate-900`}>
+                <button onClick={()=>setIsOpen(false)} className='bg-red-500 m-5 px-3 py-1 rounded-md text-white text-xl hover-eff transition-all duration-300'>remove</button>
+            </div>
+       </div>
     </>
   )
 }
