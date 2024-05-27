@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Navbar from './Navbar'
 import Cards from './Cards'
 import Footer from './Footer'
-import Carusel from './Carusel'
+// import Carusel from './Carusel'*+
+import { ProductContext } from '../App'
+import StoreCart from './StoreCart'
 
 
 
@@ -259,6 +261,7 @@ const MainContainer = () => {
             description: "Turli xil ranglardagi fanerlar, yuqori sifatli va suv teksa shishib ketishi kam"
         }
     ]
+    const [state, dispatch] = useContext(ProductContext)
     const [dataBase, setDataBase] = useState(dataBaseProducts)
     const [data, setData] = useState()
     const mx = "lg:mx-16 md:mx-13 sm:mx-8 mx-7  "
@@ -272,16 +275,30 @@ const MainContainer = () => {
             setData(dataBase)
         }
     }
+
+    // sotib olsh funksiyasi
+    const buyHandler = (item) =>{
+        let cartToLS = JSON.parse( localStorage.getItem("cart")) || []
+        let filtered = cartToLS.find(elem => elem.id === item.id)
+        if(filtered){
+            cartToLS = cartToLS.filter(elem=>elem.id !== item.id)
+        }
+        else{
+            cartToLS = [...cartToLS, item]
+        }
+        dispatch({type: "PRODUCT", payload: cartToLS})
+        localStorage.setItem("cart", JSON.stringify(cartToLS))
+    }
   return (
     <>
        <div>
             <div>
                  {/* navbar qowdm */}
-                <Navbar setIsOpen={setIsOpen} mx={mx}/>
+                <Navbar setIsOpen={setIsOpen} state={state} mx={mx}/>
                 {/* carusel qoshdim */}
                 {/* <div className=' mt-10 mb-20 '>
-                 {/* <Carusel /> */}
-                 {/* </div>  */}
+                {/* <Carusel /> */}
+                {/* </div>  */}
             {/* categoriya bn search qowdm */}
             <div className={`flex justify-between items-center ${mx} mt-10`}>
                 <select onChange={(e)=>filterHandler(e.target.value)} className="border bg-transparent  rounded outline-none py-2 px-4 w-full md:w-52  border-black">
@@ -296,18 +313,16 @@ const MainContainer = () => {
             <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 ${mx} mt-10 gap-5`}>
             {
                 dataBase?.length ? dataBase.map((item, i) => (
-                <Cards i={i} item={item} /> 
+                <Cards key={i} buyHandler={buyHandler} i={i} item={item} /> 
                )) : <p>Ma'lumotlar topilamdi...</p>
             }
             </div>
             <Footer mx={mx} />
             </div>
-            <div className={`${isOpen ? "w-[500px]" : "w-0"} fixed transition-all duration-500 top-0 right-0 shadow-md h-screen bg-slate-900`}>
-                <button onClick={()=>setIsOpen(false)} className='bg-red-500 m-5 px-3 py-1 rounded-md text-white text-xl hover-eff transition-all duration-300'>remove</button>
-            </div>
+            <StoreCart isOpen={isOpen} setIsOpen={setIsOpen} data={state?.cart} />
        </div>
     </>
-  )
+  ) 
 }
 
 export default MainContainer

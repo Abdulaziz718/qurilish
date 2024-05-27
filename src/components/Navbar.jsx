@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { CiSearch } from "react-icons/ci";
 import { SlBasket } from "react-icons/sl";
+import { ProductContext } from '../App';
 
 
-const Navbar = ({mx, setIsOpen}) => {
+const Navbar = ({mx, setIsOpen, state}) => {
   return (
     <>
         <div className={`flex  mt-3 justify-between items-center ${mx}`}>
@@ -17,7 +18,7 @@ const Navbar = ({mx, setIsOpen}) => {
             <div className='flex gap-5 text-white'>
               <button className='bg-green-500 flex gap-5 px-3 md:px-5 py-2 hover-eff transition-all duration-300 rounded-lg'>Savatcha</button>
               <button className='bg-red-500 px-3 md:px-5 py-2 hover-eff transition-all duration-300 rounded-lg'>Registratsiya</button>
-              <button onClick={() => setIsOpen(true)} className='text-black text-4xl relative'><SlBasket /> <span className='top-0 right-0 absolute min-w-5 h-5 flex items-center justify-center rounded-full text-sm bg-green-500'>0</span></button>
+              <button onClick={() => setIsOpen(true)} className='text-black text-4xl relative'><SlBasket /> <span className='top-0 right-0 absolute min-w-5 h-5 flex items-center justify-center rounded-full text-sm bg-green-500'>{state?.cart.length}</span></button>
             </div>
           </div>
         
