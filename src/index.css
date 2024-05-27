@@ -23,6 +23,22 @@ input{
     transform: scale(1.1);
 }
 
+::-webkit-scrollbar-track{
+    background: transparent;
+    margin-right: 2px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: green;
+    border-radius: 50px;
+    margin-right: 2px;
+}
+
+::-webkit-scrollbar{
+    width: 7px;
+    height: 7px;
+}
+
 .hoverr{
     overflow: hidden;
     transition: all .3s ease-in-out ;

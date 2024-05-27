@@ -4,6 +4,7 @@ import Checked from './Checked';
 
 const Cards = ({item, i, buyHandler}) => {
   
+  
   return (
     <>
          <div key={i}  className='flex border  border-black  flex-col gap-1 transition-all  rounded-md overflow-hidden bg-white '>
@@ -13,7 +14,7 @@ const Cards = ({item, i, buyHandler}) => {
             </div>
             <div className="flex flex-col flex-1 p-4 gap-2">
               <h1 className='text-lg font-bold  '>{item.title}</h1>
-              <p className='font-semibold text-cyan-500'>Narxi: {item.narxi}</p>
+              <p className='font-semibold text-cyan-500'>Narxi: {item.narxi} so'm</p>
               <p className='font-semibold '><span className="font-semibold">Soni: </span>{item.stock}</p>
               <p className='text-base text-slate-500 dark:text-slate-400'>Ta'rif: {item.description}</p>
              <div className="flex flex-1 justify-center gap-5 items-center">
